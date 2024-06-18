@@ -14,12 +14,12 @@ const app = new Hono<{ Bindings: Bindings }>()
 app.use(logger());
 
 app.use(csrf({
-  origin: (origin, c) => new RegExp(`https://${c.env.MAINSITE_DOMAIN}$`).test(origin)
+  origin: (origin, c) => new RegExp(`${c.env.MAINSITE_URL}$`).test(origin)
 }));
 
 app.use('*', cors({
-  origin: (origin, c) => `https://${c.env.MAINSITE_DOMAIN}`,
-  allowHeaders: ['X-Custom-Header', 'Upgrade-Insecure-Requests'],
+  origin: (origin, c) => c.env.MAINSITE_URL,
+  allowHeaders: ['Content-Type', 'X-CSRF-Token'],
   allowMethods: ['GET', 'POST'],
   credentials: true
 }));
