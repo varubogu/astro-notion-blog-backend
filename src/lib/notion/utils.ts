@@ -2,7 +2,38 @@ import { DatabasePropertyConfigResponse, type CreatePageParameters, type GetData
 import type { CommentFormSend } from "../schemas/commentFormSend";
 import type { Client } from "@notionhq/client";
 
-
+export async function getCommentsFromArticleId(
+    notion: Client,
+    databaseId: string,
+    articleId: string
+): Promise<string> {
+    const response = await notion.databases.query({
+        database_id: databaseId,
+        filter: {
+            and: [
+                {
+                    property: "Published",
+                    checkbox: {
+                        equals: true
+                    }
+                },
+                {
+                    property: "Article",
+                    relation: {
+                        contains: articleId
+                    }
+                }
+            ]
+        },
+        sorts: [
+            {
+                property: "作成日時",
+                direction: "ascending"
+            }
+        ]
+    });
+    return response.results;
+}
 
 /**
  * Notionクライアントとスラッグを受け取り、対応する記事のIDを返します。
@@ -12,7 +43,7 @@ import type { Client } from "@notionhq/client";
  * @param slug 記事のスラッグ
  * @returns 記事IDをPromiseで返します。
  */
-export async function getArticleIdFromSlug(
+export async function fetchArticleIdFromSlug(
     notion: Client,
     databaseId: string,
     slug: string
@@ -206,6 +237,41 @@ export function makePostPropertyValue(
                 }
             ]
         };
+    } else {
+        console.log("unimplemented property type: ", property.type);
+        return undefined;
+    }
+}
+
+export function getPropertyValue(
+    property: DatabasePropertyConfigResponse
+): any {
+    if (property.type === "date") {
+        return property["date"];
+    } else if (property.type === "multi_select") {
+        return property["multi_select"];
+    } else if (property.type === "select") {
+        return property["select"];
+    } else if (property.type === "email") {
+        return property["email"];
+    } else if (property.type === "checkbox") {
+        return property["checkbox"];
+    } else if (property.type === "url") {
+        return property["url"];
+    } else if (property.type === "number") {
+        return property["number"];
+    } else if (property.type === "title") {
+        return property["title"][0]['text']['content'];
+    } else if (property.type === "rich_text") {
+        return property['rich_text'][0]['text']['content'];
+    } else if (property.type === "phone_number") {
+        return property['phone_number'];
+    } else if (property.type === "relation") {
+        return property["relation"]["id"];
+    } else if (property.type === "created_time") {
+        return property['created_time'];
+    } else if (property.type === "last_edited_time") {
+        return property['last_edited_time'];
     } else {
         console.log("unimplemented property type: ", property.type);
         return undefined;
