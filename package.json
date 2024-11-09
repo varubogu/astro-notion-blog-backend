@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
-    "hono": "^4.4.2",
+    "hono": "^4.6.5",
     "zod": "^3.23.8"
   },
   "devDependencies": {
