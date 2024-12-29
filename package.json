@@ -6,11 +6,11 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
-    "hono": "^4.6.5",
-    "zod": "^3.23.8"
+    "hono": "^4.6.15",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240529.0",
-    "wrangler": "^3.57.2"
+    "@cloudflare/workers-types": "^4.20241224.0",
+    "wrangler": "^3.99.0"
   }
 }
