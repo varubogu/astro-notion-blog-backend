@@ -30,9 +30,12 @@ The "slug" refers to the slug used in astro-notion-blog (i.e., the part of the U
 Copy the following database and place it anywhere in your Notion workspace:
 <https://sharp-spring-bac.notion.site/a74be7d72a1745fe9f229c136a43c6a8?v=2a463a38f818466bbabfe69f5d57338f&pvs=4>
 
+Then, link the "Article" column (relation) of the database to the database used by astro-notion-blog.
+
 ### Configure Notion Integration
 
 Create an integration and set the following permissions:
+
 - Content Capabilities > Read content
 - Content Capabilities > Insert content
 
@@ -40,6 +43,9 @@ Create an integration and set the following permissions:
 
 Apply the created integration to both the database used by astro-notion-blog and the comment database you just copied.
 ![alt text](doc/image2.png)
+
+Note:
+We would like this backend to have the ability to write to comments and read from the blog, but the current Notion specifications do not allow individual permissions to be granted, such as allowing read access to one database and writing access to the other, in the permission settings of the Notion integration.
 
 For convenience, you can set up an automation to notify you via Slack when a new page is added.
 
