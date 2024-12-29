@@ -1,5 +1,4 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "astro-notion-blog-backend"
 main = "src/index.ts"
 compatibility_date = "2024-05-29"
 
