@@ -1,4 +1,4 @@
-import { describe, it, expect } from "bun:test";
+import { describe, it, expect } from "vitest";
 
 describe('http://localhost:3000/api/v1/comments/add', () => {
 
@@ -31,4 +31,3 @@ describe('http://localhost:3000/api/v1/comments/add', () => {
 
 
 });
-

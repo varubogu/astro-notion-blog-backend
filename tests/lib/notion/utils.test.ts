@@ -1,4 +1,4 @@
-import { describe, it, expect } from "bun:test";
+import { describe, it, expect } from "vitest";
 import { makePostPropertyValue } from '../../../src/lib/notion/utils';
 import { DatabasePropertyConfigResponse } from "@notionhq/client/build/src/api-endpoints";
 
@@ -91,4 +91,3 @@ describe('makePostPropertyValue', () => {
         });
     });
 });
-
