@@ -7,9 +7,7 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/typescript": {
-		  "version": "latest"
-		},
+		"ghcr.io/devcontainers-extra/features/typescript": "latest",
 		"ghcr.io/shyim/devcontainers-features/bun": "latest"
 	},
 	"customizations": {
