@@ -1,15 +1,26 @@
 {
-    // IntelliSense を使用して利用可能な属性を学べます。
-    // 既存の属性の説明をホバーして表示します。
-    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node-terminal",
-            "request": "launch",
-            "name": "プログラムの起動",
-            "cwd": "${workspaceFolder}",
-            "command": "npm run dev"
-        }
-    ]
+	// IntelliSense を使用して利用可能な属性を学べます。
+	// 既存の属性の説明をホバーして表示します。
+	// 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node-terminal",
+			"request": "launch",
+			"name": "wrangler dev",
+			"cwd": "${workspaceFolder}",
+			"command": "npm run wrangler dev"
+		},
+		{
+			"name": "wrangler debug",
+			"type": "node",
+			"request": "attach",
+			"port": 9229,
+			"cwd": "${workspaceFolder}",
+			"resolveSourceMapLocations": null,
+			"attachExistingChildren": false,
+			"autoAttachChildProcesses": false,
+			"sourceMaps": true
+		}
+	]
 }

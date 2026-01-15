@@ -13,13 +13,15 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"Postman.postman-for-vscode",
-				"fill-labs.dependi"
+				"biomejs.biome",
+				"bungcip.better-toml",
+				"fill-labs.dependi",
+				"Postman.postman-for-vscode"
 			]
 		}
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8787],
+	"forwardPorts": [8787]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",

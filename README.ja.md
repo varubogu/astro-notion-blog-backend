@@ -33,6 +33,18 @@ https://sharp-spring-bac.notion.site/a74be7d72a1745fe9f229c136a43c6a8?v=2a463a38
 
 その後、データベースの「Article」列（リレーション）をastro-notion-blogで使っているデータベースとリンクさせてください。
 
+### NotionのデータソースIDを取得
+
+この操作はブログのデータソースIDとコメントのデータソースIDの両方で行う必要があります。
+
+NotionのデータソースIDを取得する方法は以下の通りです。
+1. Notionのデータベースの「設定」を開く
+2. 「データソースを管理する」を開く
+3. 「データソース」の三点リーダーから「データソースIDをコピー」を選択
+4. データソースIDを環境変数に設定
+
+※昔はDATABASE_IDを使用していましたが、NotionAPIの変更に伴いDATASOURCE_IDを使用するようになりました。
+
 ### Notionインテグレーションの設定
 
 インテグレーションを作成し以下の権限を設定します。
@@ -77,9 +89,13 @@ Cloudflare Workers & Pages > デプロイした名前のサイトを選択 > 設
 |環境変数名|説明|
 |---|---|
 |NOTION_API_SECRET | NotionSDKで利用するインテグレーションのシークレット |
-|NOTION_DATABASE_POSTS_ID | ブログのデータベースID |
-|NOTION_DATABASE_COMMENTS_ID | コメントのデータベースID |
+|~~NOTION_DATABASE_POSTS_ID~~ | ~~ブログのデータベースID~~ |
+|NOTION_DATASOURCE_POSTS_ID | ブログのデータソースID |
+|~~NOTION_DATABASE_COMMENTS_ID~~ | ~~コメントのデータベースID~~ |
+|NOTION_DATASOURCE_COMMENTS_ID | コメントのデータソースID |
 |MAINSITE_DOMAIN | astro-notion-blogで動かしているサイトのドメイン名 |
+
+※元々はDATABASE_IDを使用していましたが、今後はNotionAPIの変更に伴いDATASOURCE_IDを使用するようになりました。
 
 ローカルで動かしたい場合、
 .dev.vars.example をコピーして、名前を .dev.vars に変更し、環境変数を書き込んでください。
@@ -126,7 +142,7 @@ Cloudflare Workers & Pages > デプロイした名前のサイトを選択 > 設
 - 高性能なWebフレームワークで、シンプルかつ柔軟なAPIを提供します。
 - 公式サイト: https://hono.dev/
 - GitHub: https://github.com/honojs/hono
-- ライセンス: M[MIT License](https://github.com/honojs/hono/blob/main/LICENSE)
+- ライセンス: [MIT License](https://github.com/honojs/hono/blob/main/LICENSE)
 
 ### Zod
 
