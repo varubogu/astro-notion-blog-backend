@@ -32,6 +32,18 @@ Copy the following database and place it anywhere in your Notion workspace:
 
 Then, link the "Article" column (relation) of the database to the database used by astro-notion-blog.
 
+### Get Notion Data Source ID
+
+This operation needs to be performed for both the blog data source ID and the comment data source ID.
+
+To get the Notion data source ID, follow these steps:
+1. Open the "Settings" of the Notion database
+2. Open "Manage data source"
+3. Select "Copy data source ID" from the three-dot menu of "Data source"
+4. Set the data source ID as an environment variable
+
+Note: Previously, DATABASE_ID was used, but due to changes in the Notion API, DATASOURCE_ID is now used.
+
 ### Configure Notion Integration
 
 Create an integration and set the following permissions:
@@ -73,9 +85,13 @@ Set the following:
 | Environment Variable Name | Description |
 |---|---|
 | NOTION_API_SECRET | Secret for the integration used by NotionSDK |
-| NOTION_DATABASE_POSTS_ID | Database ID for the blog |
-| NOTION_DATABASE_COMMENTS_ID | Database ID for comments |
+| ~~NOTION_DATABASE_POSTS_ID~~ | ~~Database ID for the blog~~ |
+| NOTION_DATASOURCE_POSTS_ID | Data source ID for the blog |
+| ~~NOTION_DATABASE_COMMENTS_ID~~ | ~~Database ID for comments~~ |
+| NOTION_DATASOURCE_COMMENTS_ID | Data source ID for comments |
 | MAINSITE_DOMAIN | Domain name of the site running astro-notion-blog |
+
+Note: Previously, DATABASE_ID was used, but due to changes in the Notion API, DATASOURCE_ID is now used.
 
 If you want to run it locally, copy `.dev.vars.example` to `.dev.vars` and write in the environment variables.
 
