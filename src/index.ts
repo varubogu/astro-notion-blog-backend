@@ -9,7 +9,7 @@ type Bindings = {
   [key in keyof CloudflareBindings]: CloudflareBindings[key]
 }
 
-const app = new Hono<{ Bindings: Bindings }>()
+const app = new Hono<{ Bindings: CloudflareBindings }>();
 
 app.use(logger());
 
