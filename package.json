@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@notionhq/client": "^5.6.0",
-		"hono": "^4.11.4",
+		"hono": "^4.11.7",
 		"typescript": "^5.8.3",
 		"zod": "^4.3.5"
 	},
