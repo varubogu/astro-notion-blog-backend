@@ -1,8 +1,8 @@
 {
 	"recommendations": [
 		"biomejs.biome",
-		"bungcip.better-toml",
 		"fill-labs.dependi",
-		"Postman.postman-for-vscode"
+		"Postman.postman-for-vscode",
+		"tamasfe.even-better-toml"
 	]
 }
