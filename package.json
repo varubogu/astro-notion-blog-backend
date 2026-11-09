@@ -13,14 +13,14 @@
 		"wrangler": "wrangler"
 	},
 	"dependencies": {
-		"@notionhq/client": "^5.29.0",
-		"hono": "^4.13.14",
+		"@notionhq/client": "^5.31.0",
+		"hono": "^4.13.16",
 		"typescript": "^7.0.2",
 		"zod": "^4.6.7"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.6.4",
-		"vitest": "^5.0.5",
-		"wrangler": "^4.156.0"
+		"@biomejs/biome": "2.6.5",
+		"vitest": "^5.1.0",
+		"wrangler": "^4.158.0"
 	}
 }
