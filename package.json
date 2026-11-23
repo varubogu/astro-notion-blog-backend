@@ -14,13 +14,13 @@
 	},
 	"dependencies": {
 		"@notionhq/client": "^5.31.1",
-		"hono": "^4.13.18",
+		"hono": "^4.13.19",
 		"typescript": "^7.0.2",
 		"zod": "^4.6.7"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.6.7",
-		"vitest": "^5.1.0",
-		"wrangler": "^4.161.0"
+		"@biomejs/biome": "2.6.8",
+		"vitest": "^5.1.1",
+		"wrangler": "^4.165.0"
 	}
 }
